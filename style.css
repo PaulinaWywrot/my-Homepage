@@ -1,0 +1,77 @@
+/* =================
+  WRITE YOUR CSS HERE.
+  Check the ⌄ for help with formatting and validating your code.
+  You must write some CSS to complete this challenge.
+   ===================
+*/
+
+html,
+body {
+  margin: 10;
+  height: 100%;
+  background-color: #e2fdff;
+  text-align: center;
+}
+header {
+  background-image: url(https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+  height: 700px;
+  background-size: cover;
+  Margin-bottom: 50px;
+}
+
+.me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#title {
+    background: #eaf4f4;
+    font-family: "Garamond";
+    color: #022B3A;
+    padding: 2px 6px;
+    border-radius: 5px;
+    margin: 100px 0 10px 0;
+}
+.c-site-header {
+  background: #eaf4f4;
+  font-family: "Garamond";
+  color: #022B3A;
+  padding: 2px 6px;
+  border-radius: 5px;
+  margin: 5px 0 10px 0;
+}
+p {
+    font-style: italic;
+}
+#navbar {
+
+  color: green;
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+
+#opening {
+  color: #022B3A;
+}
+#song {
+  color: #022B3A;
+}
+
+#career {
+  color: #022B3A;
+}
+
+.c-site-footer {
+  border-top: 2px solid red;
+}
+
+
+/* don't edit this */
+.jest-lite-report__status--pass {
+  background: var(--color-pass);
+}
+.jest-lite-report__errors { display:none }

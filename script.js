@@ -33,6 +33,34 @@ const getHeader = document.querySelectorAll("header"),
    The tests will run every time you update your code.
    ===================
 */
+
+var photo;
+
+// Describe this function...
+function first() {
+  if(--window.LoopTrap <= 0) throw "Infinite loop.";
+  let element_img2 = document.getElementById('img');
+  element_img2.setAttribute("src", photo[0]);
+  photo.push(photo.shift());
+}
+
+
+photo = ['https://images.unsplash.com/photo-1458501534264-7d326fa0ca04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80', 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80', 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80', 'https://images.unsplash.com/photo-1559080463-5c7eb3a52de1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'];
+first();
+
+
+document.getElementById('next').addEventListener('click', (event) => {
+  first();
+
+});
+
+document.getElementById('previous').addEventListener('click', (event) => {
+  let element_img = document.getElementById('img');
+  element_img.setAttribute("src", photo.slice(-1)[0]);
+  photo.unshift(photo.pop());
+
+});
+
 test("There is at least one header element", () => {
   expect(getHeader.length).toBeGreaterThanOrEqual(1);
 });

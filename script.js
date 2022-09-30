@@ -118,12 +118,12 @@ document.getElementById('button').addEventListener('click', (event) => {
   if (value == 'See all reviews') {
     review.forEach((item) => {
       let element_list = document.getElementById('list');
-      let new_li = document.createElement('li');
+      let new_li = document.createElement('p');
       new_li.innerText = item;
 
       element_list.appendChild(new_li);
-      let new_ul = document.createElement('ul');
-      let new_li2 = document.createElement('li');
+      let new_ul = document.createElement('div');
+      let new_li2 = document.createElement('p');
       new_li2.innerText = http[0];
 
       new_ul.appendChild(new_li2);

@@ -94,3 +94,53 @@ test("There are at least 500 words on the page", () => {
 
 const console = document.getElementById("tests");
 prettify.toHTML(run(), console);
+
+var value, review, item, links, http;
+
+function getNumberOrString(value) {
+  // Convert a string value to a number if possible
+  let number_value = Number(value);
+  if (Number.isNaN(number_value)) {
+    return value
+  } else {
+    return number_value
+  }
+}
+
+
+value = getNumberOrString(document.getElementById('button').value);
+review = [];
+links = [];
+http = [];
+
+
+document.getElementById('button').addEventListener('click', (event) => {
+  if (value == 'See all reviews') {
+    review.forEach((item) => {
+      let element_list = document.getElementById('list');
+      let new_li = document.createElement('li');
+      new_li.innerText = item;
+
+      element_list.appendChild(new_li);
+      let new_ul = document.createElement('ul');
+      let new_li2 = document.createElement('li');
+      new_li2.innerText = http[0];
+
+      new_ul.appendChild(new_li2);
+
+      element_list.appendChild(new_ul);
+    });
+    value = 'off';
+  } else {
+    let element_list2 = document.getElementById('list');
+    element_list2.innerText = '';
+    value = 'See all reviews';
+  }
+
+});
+
+document.getElementById('send').addEventListener('click', (event) => {
+  review.unshift(getNumberOrString(document.getElementById('name').value));
+  http.unshift(getNumberOrString(document.getElementById('comment').value));
+
+});
